@@ -1,31 +1,38 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-vector<int> maximumsumSubarray(vector<int> &arr , int n){
-    int maxi=INT_MIN;
-    vector<int>ans;
-    int sum=0;
-    int start=0;
-    int ansStart=-1;
-    int ansEnd=-1;
-    for(int i=0;i<n;i++){
-        sum+=arr[i];
-        if(sum>maxi){
-            maxi=sum;
-            ansStart=start;
-            ansEnd=i;
-        }
-        if (sum < 0){
-        sum = 0;
-        start=i+1;
-        }
-    }
-    for(int i=ansStart;i<=ansEnd;i++){
-        ans.push_back(arr[i]);
-    }
-    return ans;
+
+void insertInSortedStack(stack<int>& st, int element); // Function declaration
+
+void sortStack(stack<int>& st, int element) {
+    if (!st.empty()) return;
+    int top = st.top();
+    st.pop();
+    sortStack(st, element);
+    insertInSortedStack(st, top);
 }
-    int main() {
-        vector<int>ans{1,-1,2,4,-3,4,5,-1,3,-5};
-        vector<int>res=maximumsumSubarray(ans,10);
-        for(auto x : res) cout<<x<<" ";
+
+void insertInSortedStack(stack<int>& st, int element) {
+    if (st.empty() or element > st.top()) {
+        st.push(element);
+        return;
     }
+    int top = st.top();
+    st.pop();
+    insertInSortedStack(st, element); // Corrected recursive call
+    st.push(top);
+}
+
+int main() {
+    stack<int> st;
+    st.push(3);
+    st.push(1);
+    st.push(5);
+    st.push(2);
+    st.push(0);
+    sortStack(st, st.top());
+    while (!st.empty()) {
+        cout << st.top() << " ";
+        st.pop();
+    }
+    return 0;
+}
