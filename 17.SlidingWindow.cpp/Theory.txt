@@ -1,7 +1,7 @@
 // (note if array is 1 2 3 4 then 2 3 4 is a subarray but 1 2 4 is not a subarray as it is not contiguous)
 
 // Identification : 
-// 1. Array/ string Question  
+// 1. Array/ string Question  // **************** remeber that when we slide the window j-i+1 new subaarays are possible *****************
 // 2. Subarray/substring 
 // 3. largest,smallest,maximum,minimum etc asked
 // 4. k (window size would be given/or to be calculated) 

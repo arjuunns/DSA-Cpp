@@ -2,7 +2,7 @@
 using namespace std;
 void SubsetSum(vector<int> &arr, multiset<int> &ans, int i, int sum)
 {
-    if (i == arr.size()) { // T.C -> O(2^n * logn) and Spcae : O(n) recursive stack space + O(2^n) for set
+    if (i == arr.size()) { // T.C -> O(2^n * logn) and Space : O(n) recursive stack space + O(2^n) for set
         ans.insert(sum);
         return;
     }
