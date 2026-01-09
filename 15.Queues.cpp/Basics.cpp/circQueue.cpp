@@ -55,8 +55,7 @@ int main()
     qu.enqueue(30);
     qu.dequeue();
     qu.enqueue(40);
-    while (!qu.isEmpty())
-    {
+    while (!qu.isEmpty()) {
         cout << qu.getfront() << " ";
         qu.dequeue();
     }

@@ -12,8 +12,7 @@ public:
         cout << (value1 - value2) << endl;
     }
 };
-int main()
-{
+int main() {
     param obj1, obj2;
     obj1.val = 7;
     obj2.val = 2;

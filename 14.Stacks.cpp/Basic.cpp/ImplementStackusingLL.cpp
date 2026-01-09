@@ -52,8 +52,9 @@ public:
         this->head = newnode;
         this->currSize++;
     }
-    void pop() // delete head
-    {
+    void pop() // delete head // 1 ->  2 ->  -> null
+    {                         //                Head
+                              //           temp
         if (isEmpty())
             cout << "Stack is empty !" << endl;
         node *temp = this->head;

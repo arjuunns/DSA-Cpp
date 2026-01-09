@@ -42,7 +42,7 @@ int main()
         }
         else
         {
-            if (priority(op.top()) >= priority(ch))
+            while (priority(op.top()) >= priority(ch))
             {
                 string v2 = val.top();
                 val.pop();
